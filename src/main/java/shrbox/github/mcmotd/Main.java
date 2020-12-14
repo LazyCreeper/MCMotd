@@ -6,7 +6,7 @@ import net.mamoe.mirai.message.GroupMessageEvent;
 class Main extends PluginBase {
     public void onEnable() {
         getEventListener().subscribeAlways(GroupMessageEvent.class, (GroupMessageEvent e) -> {
-            if (e.getMessage().contentToString().contains("!motd ")) {
+            if (e.getMessage().contentToString().contains("#motd ")) {
                 Thread thread = new Thread();
                 thread.boot(e);
             }

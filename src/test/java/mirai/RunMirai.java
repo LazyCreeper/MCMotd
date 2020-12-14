@@ -7,14 +7,14 @@ import net.mamoe.mirai.console.pure.MiraiConsolePureLoader;
 
 public class RunMirai {
    
-    // æ‰§è¡Œ gradle task: runMiraiConsole æ¥è‡ªåŠ¨ç¼–è¯‘, shadow, å¤åˆ¶, å¹¶å¯åŠ¨ pure console.
+    // Ö´ÐÐ gradle task: runMiraiConsole À´×Ô¶¯±àÒë, shadow, ¸´ÖÆ, ²¢Æô¶¯ pure console.
 
     public static void main(String[] args) throws InterruptedException {
-        // é»˜è®¤åœ¨ /test ç›®å½•ä¸‹è¿è¡Œ
+        // Ä¬ÈÏÔÚ /test Ä¿Â¼ÏÂÔËÐÐ
 
-        MiraiConsolePureLoader.load(args[0], args[1]); // å¯åŠ¨ console
+        MiraiConsolePureLoader.load(args[0], args[1]); // Æô¶¯ console
 
-        // é˜»æ­¢ä¸»çº¿ç¨‹é€€å‡º
+        // ×èÖ¹Ö÷Ïß³ÌÍË³ö
         BuildersKt.runBlocking(GlobalScope.INSTANCE.getCoroutineContext(), (coroutineScope, continuation) -> CommandManager.INSTANCE.join(continuation));
     }
 }

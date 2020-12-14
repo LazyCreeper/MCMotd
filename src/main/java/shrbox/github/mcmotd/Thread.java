@@ -14,10 +14,10 @@ public class Thread extends java.lang.Thread {
     @Override
     public void run() {
         String msg = e.getMessage().contentToString();
-        String domain = msg.replace("!motd", "").toLowerCase().trim();
+        String domain = msg.replace("#motd", "").toLowerCase().trim();
         if (e.getMessage().contentToString().equals("")) {
             e.getGroup().sendMessage(MessageUtils.newChain(new At(e.getSender()))
-                    .plus("请输入一个地址"));
+                    .plus("请输入服务器IP地址"));
             return;
         }
         String port = "25565";
@@ -26,7 +26,7 @@ public class Thread extends java.lang.Thread {
         }
         String Json = Connection.getURL(domain, port);
         if (Json.equals("")) {
-            e.getGroup().sendMessage(("[MCAPI] 接口无响应"));
+            e.getGroup().sendMessage(("[MCAPI] 接口无响应．．．"));
             return;
         }
         Gson gson = new Gson();

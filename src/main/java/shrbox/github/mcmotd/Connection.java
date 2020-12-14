@@ -10,7 +10,7 @@ import java.net.URLConnection;
 public class Connection {
     public static String getURL(String address, String port) {
         try {
-            URL url = new URL("https://api.imlazy.ink/mcapi/json.php?host=" + address + "&port=" + port);
+            URL url = new URL("http://api.imlazy.ink/mcapi/json.php?host=" + address + "&port=" + port);
             URLConnection urlConnection = url.openConnection();
             HttpURLConnection httpURLConnection = (HttpURLConnection) urlConnection;
             if (httpURLConnection.getResponseCode() != HttpURLConnection.HTTP_OK) return "";
